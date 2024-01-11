@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ffdb95;
+            font-family: 'Arial', sans-serif;
+            color: #333333;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+            color: #555555;
+        }
+
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            background-color: #f8f8f8;
+            color: #333333;
+        }
+
+        button {
+            background-color: #4c67af;
+            color: #ffffff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .already-registered {
+            margin-top: 15px;
+            text-align: center;
+            color: #555555;
+        }
+
+        .already-registered a {
+            color: #4c67af;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-warning" role="alert">
+            {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+
+        <form action="" method="post">
+            {% csrf_token %}
+            {% for x in registration_form %}
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">{{ x.label }}</label>
+                <div class="col-sm-9">
+                    {{ x }}
+                </div>
+            </div>
+            {% endfor %}
+
+            <div class="form-group row">
+                <div class="col-sm-9 offset-sm-3">
+                    <button type="submit">Submit</button>
+                </div>
+            </div>
+
+            <p class="already-registered">Already Registered! <a href="{% url 'login' %}">Login</a></p>
+        </form>
+    </div>
+
+    <!-- Include Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
