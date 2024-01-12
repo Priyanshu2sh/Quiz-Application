@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration</title>
-    <!-- Include Bootstrap CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="{% static 'questions/css/bootstrap.css' %}">
     <style>
         body {
             background-color: #ffdb95;
@@ -75,6 +74,7 @@
 </head>
 
 <body>
+    <h1 class="text-center mt-5">Sign Up</h1>
     <div class="container">
         {% if messages %}
         {% for message in messages %}
@@ -105,10 +105,10 @@
         </form>
     </div>
 
-    <!-- Include Bootstrap JS and Popper.js -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- Bootstrap JS and jQuery -->
+    <script src="{% static 'questions/js/bootstrap.js' %}"></script>
+    <script src="{% static 'questions/js/jquery.js' %}"></script>
+    <script src="{% static 'questions/js/popper.js' %}"></script>
 </body>
 
 </html>

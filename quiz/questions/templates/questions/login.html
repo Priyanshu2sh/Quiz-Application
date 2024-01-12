@@ -1,11 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+    {% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="{% static 'questions/css/bootstrap.css' %}">
 </head>
 <body>
-    hello 
+    <h1 class="text-center mt-5">Login</h1>
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-warning" role="alert">
+        {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    <form action="" method="post">
+        {% csrf_token %}
+        <input name="mobile" type="number" maxlength="10" minlength="10" placeholder="Enter your number"> <br>
+        <input type="submit" value="Login">
+        <p class="new-account">Create new account! <a href="{% url 'registration' %}">Sign Up</a></p>
+    </form>
+
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="{% static 'questions/js/bootstrap.js' %}"></script>
+    <script src="{% static 'questions/js/jquery.js' %}"></script>
+    <script src="{% static 'questions/js/popper.js' %}"></script> 
 </body>
 </html>

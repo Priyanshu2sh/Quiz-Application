@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .otp-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px; /* Set a max-width for better readability on larger screens */
+            width: 100%;
+            text-align: center; /* Center align the content */
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            color: #555;
+        }
+
+        .otp-input {
+            width: 300px;
+            height: 50px;
+            text-align: center;
+            font-size: 18px;
+            margin: 0 5px;
+            border: 1px solid #ddd; /* Add a subtle border for better visibility */
+            border-radius: 5px;
+        }
+
+        .otp-input:focus {
+            outline: none;
+            border-color: #4caf50; /* Highlight the input when focused */
+        }
+
+        .submit-btn {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #45a049; /* Darken the color on hover for visual feedback */
+        }
+    </style>
+</head>
+<body>
+
+<div class="otp-container">
+    <h2>OTP Verification</h2>
+    <p>Please enter the 6-digit OTP sent to your mobile number.</p>
+
+    <form id="otp-form" method="post">
+        {% csrf_token %}
+        <input name="otp" type="text" class="otp-input" maxlength="6" required>
+
+        <br><br>
+        <input type="submit" class="submit-btn" value="Verify OTP">
+    </form>
+</div>
+
+</body>
+</html>
