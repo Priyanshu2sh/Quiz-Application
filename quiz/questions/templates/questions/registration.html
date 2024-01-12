@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-{% load static %}
+
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration Page</title>
     <link rel="stylesheet" href="{% static 'questions/css/bootstrap.css' %}">
     <style>
         body {
-            background-color: #ffdb95;
+            background-color: #343a40;
+            color: #ffffff;
             font-family: 'Arial', sans-serif;
-            color: #333333;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 5%;
         }
 
         .container {
             max-width: 600px;
-            margin: 50px auto;
-            background-color: white;
+            margin: auto;
+            background-color: #495057;
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
         }
 
         form {
@@ -34,24 +41,29 @@
             font-weight: bold;
             display: block;
             margin-bottom: 8px;
-            color: #555555;
+            color: #ffffff;
         }
-
 
         input[type="text"],
         input[type="email"],
         input[type="number"] {
             width: calc(100% - 22px);
             padding: 10px;
-            border: 1px solid #cccccc;
+            border: 1px solid #6c757d;
             border-radius: 5px;
             box-sizing: border-box;
-            background-color: #f8f8f8;
-            color: #333333;
+            background-color: #6c757d;
+            color: #ffffff;
+            /* Remove increment/decrement arrows */
+            -webkit-appearance: none;
+            -moz-appearance: textfield;
+            appearance: none;
+            /* Optional: Add a padding to make room for the border */
+            padding: 8px;
         }
 
         button {
-            background-color: #4c67af;
+            background-color: #007bff;
             color: #ffffff;
             border: none;
             padding: 12px 20px;
@@ -63,12 +75,43 @@
         .already-registered {
             margin-top: 15px;
             text-align: center;
-            color: #555555;
+            color: #ffffff;
         }
 
         .already-registered a {
-            color: #4c67af;
+            color: #007bff;
             text-decoration: none;
+        }
+
+        /* Add this style to your existing styles in the registration page */
+        input[type="number"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid #6c757d;
+            border-radius: 5px;
+            box-sizing: border-box;
+            background-color: #6c757d;
+            color: #ffffff;
+            /* Remove increment/decrement arrows */
+            -webkit-appearance: none;
+            -moz-appearance: textfield;
+            appearance: none;
+            /* Optional: Add a padding to make room for the border */
+            padding: 8px;
+        }
+
+        /* Remove increment/decrement arrows in Firefox */
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Remove increment/decrement arrows in Chrome, Safari, and Edge */
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
         }
     </style>
 </head>
@@ -106,8 +149,8 @@
     </div>
 
     <!-- Bootstrap JS and jQuery -->
-    <script src="{% static 'questions/js/bootstrap.js' %}"></script>
     <script src="{% static 'questions/js/jquery.js' %}"></script>
+    <script src="{% static 'questions/js/bootstrap.js' %}"></script>
     <script src="{% static 'questions/js/popper.js' %}"></script>
 </body>
 

@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-{% load static %}
 
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
-    <link rel="stylesheet" href="{% static 'questions/css/bootstrap.css' %}">    
+    <link rel="stylesheet" href="{% static 'questions/css/bootstrap.css' %}">
     <style>
         body {
             background-color: #87adeb;
-            /* Light Blue background color */
             margin: 0;
             padding: 0;
             height: 100vh;
@@ -20,7 +19,6 @@
         .navbar {
             background-color: rgba(0, 0, 0, 0.5);
             padding: 10px;
-            /* Adjusted padding for shorter navbar */
         }
 
         .container {
@@ -59,7 +57,7 @@
             <h4 class="alert-heading">{{message}}</h4>
         </div>
         {% endfor %}
-        {% endif %}</p>
+        {% endif %}
     </div>
 
     <nav class="navbar">
@@ -85,7 +83,7 @@
     <script src="{% static 'questions/js/bootstrap.js' %}"></script>
     <script src="{% static 'questions/js/jquery.js' %}"></script>
     <script src="{% static 'questions/js/popper.js' %}"></script>
-    
+
     <script>
         // Get all elements with class "auto-close"
         const autoCloseElements = document.querySelectorAll(".auto-close");
